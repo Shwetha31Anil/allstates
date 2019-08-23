@@ -1,0 +1,152 @@
+RECAP:
+RDBMS--- SQL--- MySQL
+CODD rules
+Normalization
+	1NF-- no atomic values
+	2NF-- no partial dependency
+	3NF-- no trasitive dependency
+	3.5Nf(BCNF)
+SQL-- DDL--create, alter drop
+create table tablename
+(stid int(3) primary key autoincrement,
+stname varchar(30) not null,
+dob    timestamp default current_timestamp,
+age int(3) check (age < 21),
+marks decimal(10,4)
+);
+ 
+constraint st_sub_id foreign key (column) references parenttable(pk)
+
+alter table tablename add/modify/drop 
+
+drop table tablename;
+
+DML-- insert, update, delete
+
+insert into tablename(columnnames) values(data,'dd','yyyy-MM-dd  hh24:mi:ss');
+
+update tablename set coulmnname=newvalue where pkcoulmn=id;
+
+delete from tablename where columnname=value;
+
+
+DRL/DQL:  select
+
+select * from tablename;
+select coulnamen,columnanme from tablename;
+select * from tablename where marks between 70 and 80;
+select * from tablename where sub='value' or marks=value;
+select * from tablename where colname like '%a';   '_a_m%';
+
+sales in bangalore
+
+select * from employee where deptcode IN (select deptcode from department  where dname='sales' and lcode
+=(select lcode from location where lname='bangalore'));
+
+
+select ename,dname,lname, jname from employee e, department d,location l, job j where
+e.deptcode=d.deptcode and d.lcode=l.lcode and j.jcode=e.jcode ;
+
+8*3*3*3
+
+select ename,dname,lname, jname from employee inner join department inner join location
+inner join job on e.deptcode=d.deptcode and d.lcode=l.lcode and j.jcode=e.jcode;
+
+
+select ename, dname from employee inner join department  d using(d.deptcode) ;
+
+
+select ename, dname from employee left outer join department  d using(d.deptcode) 
+union
+select ename, dname from employee right outer join department  d using(d.deptcode) ;
+
+
+select count(*) from tablename;
+
+select max(salary) from tablename;
+select min(salaty) from tablename;
+job, location, department, employee
+on delete cascade
+on delete set null
+------------------------------------------------------------------------------------------------------------------------
+Front End:
+-----------------
+HTML - 
+CSS -
+JS- Event handling..ECMAScript 5 TypeScript
+jQuery, jQueryUI
+jqGrid
+
+HTML
+--------
+<!DOCTYPE>
+<html>
+	<head>
+		<title> First Wb Page</title>
+	</head>
+	<body>
+	</body>
+</html>
+
+lists:
+
+ol
+ul
+
+file:///C:/imp/Spring%20People/ALL%20States/frontend/second.html?ename=
+file:///C:/imp/Spring%20People/ALL%20States/frontend/second.html?ename=Shwetha&pass=1234
+
+css: inline css---- style attribute
+internal css--- <style></style>
+	selectors:     1. tagname
+		2. id selector(#)
+		3. class selector(.)
+		4. universal selector (*)
+		5. Pseudo selector(:)
+External css---
+
+
+Html 5: above IE 9
+-------
+input type--- date, time, week,  color, range, number
+	required
+	pattern attribute
+	
+pattern=""
+
+[a-z]{8}
+[a-zA-Z]{2,}
+[a-zA-Z1-2]{2,8}
++--- 0 or more
+?--- optional 
+*--- 1 or more
+name.name@domain.com
+name@domain.co.in
+name-name@domian.com
+
+^([a-zA-Z1-9\.-_+]*)@([a-zA-z]*).([a-z]{2,3})([a-z]?)$
+
+
+^[^a-z]{8}$
+
+
+Multimedia:  <audio>
+	   <video>
+
+Graphics:	canvas
+	svg---line, polygon,rect, circle, ellipse
+
+WebStorage: localStorage, sessionStorage(when you close the browser)
+
+semantics:  nav, aside, section, header, footer
+
+
+
+
+
+
+ 
+
+
+
+

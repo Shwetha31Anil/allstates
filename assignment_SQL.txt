@@ -1,0 +1,8 @@
+1.Display the employee name and job name of all the employees.
+2.Display department name and its location name for all departments.
+3.Display the employee name and job name of all the employees in department no. 30.
+4.Display employee name and department name for all analysts.
+5. Write a query to display all the department names & their location names.
+6.Write a query to display the name, job name, department name and location of every employee.
+7.Write a query to display the List of departments with at least one ANALYST along with their location name.
+8. Write a query to display the list of employee names whose name contains vowels in second position.
