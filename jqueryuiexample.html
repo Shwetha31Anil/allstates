@@ -1,0 +1,21 @@
+<link rel="stylesheet" href="jquery-ui/jquery-ui.css">
+<link rel="stylesheet" href="jquery-ui/jquery-ui.structure.css">
+<link rel="stylesheet" href="jquery-ui/jquery-ui.theme.css">
+<script src="jQuery.js"></script> 
+<script src="jquery-ui/jquery-ui.js"></script>
+<script>
+	$(document).ready(function(){
+		$("#t4").datepicker({
+			numberOfMonths: 1,
+			changeYear: true,
+			changeMonth:true,
+			showWeek: true,
+			showOtherMonths:true,
+			minDate:new Date(2019, 07, 26),
+			maxDate:new Date(2023,07,26)
+		});
+	});
+</script>
+<body>
+<input type="text" id="t4">
+</body>

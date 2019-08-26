@@ -1,0 +1,42 @@
+<link rel="stylesheet" href="jquery-ui/jquery-ui.css">
+<link rel="stylesheet" href="jquery-ui/jquery-ui.structure.css">
+<link rel="stylesheet" href="jquery-ui/jquery-ui.theme.css">
+<script src="jQuery.js"></script> 
+<script src="jquery-ui/jquery-ui.js"></script>
+<script langauge="javascript">
+	$("#t3").datepicker();
+	$(document).ready(function(){
+	  $('#b1').click(function(){
+		$('#div1').fadeOut(3000);	
+	});
+	$('#b2').click(function(){
+		$('#div1').fadeIn();	
+	});
+	$('#b3').click(function(){
+		$('#div1').fadeToggle();	
+	});
+	
+	$('#b4').click(function(){
+		$('#div1').animate({left: '250px', width: '400px', height:'400px'});
+	});
+
+	
+
+	
+	});
+</script>
+<button id="b1">Hide</button>
+<button id="b2">Show</button>
+<button id="b3">Toggle</button>
+<button id="b4">Animate</button>
+<div style="width:900px;height:300px">
+<div id="div1" style="width:200px;height:200px;background:blue;position:relative">
+</div>
+<div style="width:600px;height:100px">
+<input type="text" id="t1"><br/><br/>
+<input type="text" id="t2">
+<input type="text" id="t3">
+</div>
+</div>
+<br/><br/><br/>
+<br/><br/>

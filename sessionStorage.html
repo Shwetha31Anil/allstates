@@ -1,0 +1,44 @@
+<html>
+<head>
+<script>
+function initStorage(){
+	function saveName(){
+	var name=document.getElementById('name');
+	sessionStorage.setItem('name',name.value);
+	}
+	function saveEmail(){
+	var email=document.getElementById('email');
+	sessionStorage.setItem('email',email.value);
+	}
+	saveName();
+	saveEmail();
+}
+
+function displayName(){
+	if(sessionStorage.getItem('name') != null){
+		document.write("Welcome back"+
+		sessionStorage.getItem('name'));
+	}
+}
+function clearAll(){
+	sessionStorage.clear();
+	window.location.reload();
+}
+</script>
+</head>
+<body>
+<div id="displayName">
+	<script>
+	displayName();
+	</script>
+</div>
+	<form id="news" onsubmit="initStorage()">
+	Name:<input type="text" id="name" name="name">
+	Email:<input type="email" id="email" name="email">
+	<input type="submit" value="Send">
+	<a href="#" onclick="clearAll()">Clear</a>
+	</form>
+
+		
+</body>
+</html>
