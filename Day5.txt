@@ -1,0 +1,145 @@
+Java
+-------------
+oops
+Exception and IO
+Multithreading
+Collections
+JDBC
+Servlets
+JSP
+Junit
+
+Spring CORE
+Spring DAO---Hibernate
+Spring DAO--Hibernate
+Spring MVC
+Spring MVC
+
+TDD
+Project
+------------------------------------------------------------------------
+
+Recap:  Java
+class-- properties(varaibles) and behavoiurs(methods)
+object
+
+public class Circle{
+	private int radius;//constructor or setters
+	public Circle(int radius){
+	this.radius=radius;
+	}
+	public void setRadius(int r){
+	this.radius=radius;
+	}
+	
+	public double area(){
+		return 3.14*radius*radius;
+	}
+	
+}
+class Main{
+	public static void main(String args[]){
+	Scanner sc=new Scanner(System.in);
+	Circle c1=new Circle(9);//constructor
+	//c1.radius=9;//private variables
+	System.out.print(c1.area());
+	Circle c2=new Circle();
+	System.out.print("Do you want to calculate the area of circle? y/n");
+	char op=sc.next().charAt(0);
+	if(op=='y'){
+	c2.setRadius(sc.nextInt());
+	Syso(c2.area());
+	}else
+	Syso("thank you");
+	}
+}
+
+
+accessablity: private(within class), protected(for child), 
+defualt(not a key word)(with in the package),
+ public(within packages and subpackage, within whole project)
+private variable----setters /constructor and getters
+
+Encapsulation: Wrapping up of data into single unit
+Inheritence: Inheriting the properties form parent to child
+					Single---one parent and one child
+					Multilevel-- one parent- one child--one grand child
+					Multiple-- two parent and one child(Not possible in java)
+					Hybrid--with the help of interface
+Polymorphism: Static--overloading---happen in single class
+								method name should be same signature of the argumentdifferent
+						add(int a,int b)
+						add(int a, int c,int b)
+						add(double a ,double b)
+						add(String a,int b)
+						add(int a,String b)
+						dynamic--overridding--- happen in parent and child
+							same method with same signature
+
+	Abstraction: hiding the data
+						declare the method no defination
+						
+						concrete methods--- will have body
+						abstract methods---- will not have body
+						Abstract Class
+						--- which contain only concrete methods--we cannot createinstance
+						---contain concrete and abstract method
+						---contain only abstract methods---interface
+		interface--- will contain only public abstract methods and final variables
+				
+	shape---interface
+
+	interface FligtOperations{
+	addFlight
+	updateFlight
+	cancelFlight
+	BookFlight
+	}
+	
+interface in Java 8:
+----------------------
+	default methods and static methods are allowed in java
+	
+	interface contain only one abstract method-- FI(functional interface)
+------------------------------------
+Association----relation between two entities 
+Aggregation-- object can present without other
+Composition--	object cannot present without the other
+
+
+class Department{
+	int depid;
+	String name;
+	Department(int deptid,String dname){
+	}
+}
+
+class Employee{
+ int eid;
+ String ename;
+ Department  department;
+ Employee(int eid,String ename,Department department){
+ }
+}
+
+----------------------------------
+TrainingApp:
+	Student(stid, stname,phno)--- RegularStudent, DistanceStudent
+	Course---courseId, courseName, Trainer
+	Trainer--trainerid, trainerName
+	RegularStudent--- Course, scores
+	DistanceStudent---Course[]
+		1. Create Trainer
+		2. CreateCourse
+			then assign Trainer
+		3. CreateStudent--- 1. RegularStudent	2. DistanceStudent	
+
+
+
+	
+
+	
+							
+							
+
+

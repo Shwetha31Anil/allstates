@@ -1,0 +1,234 @@
+Java : OOPs
+-------------
+James Gosling
+1997 JDK 1.1
+	JDK 1.5-- annotations
+Java 8 
+
+PlatformIndependent
+Architectural Neutral
+
+Java--.class(bytecode)--- JVM(Java Virtual Machine)
+
+OpenJDK
+
+JDK---Java Development Kit
+JRE--Java Runtime Environment(rt.jar)
+JVM--
+
+javac Building.java-compiling--- Building.class------ Decompiling(cavaj)
+C://program files/java/jdk/bin-----application(javac, java, javap
+Bytecode verifiers/Bytecode
+
+Set Paths:
+---------------
+path--- C:\Program Files\Java\jdk1.8.0_191\bin
+CLASS_PATH--- C:\Program Files\Java\jdk1.8.0_191\jre\lib
+JAVA_HOME
+JRE_HOME
+
+IDE--Integrated Development Environment
+	Eclipse, NetBeans, BuleJ, IntelliJ, visula studio code ,
+	Eclipse--- Mars, Neon, Kepler, Oxygen, Photon
+		Oxygen--- Java Developer,  Java EE developer
+
+Java is a object oriented programming:
+Class---Blueprint
+Object--- Real world entity, which will have properties and behaviours		
+
+		
+	Primitive Datatypes: byte--- 1 byte-- 
+		              char---- 2 bytes---'c'
+					  short--- 2 bytes---
+					  int-----4 bytes---
+					  long----8 bytes---
+					  float---4 bytes---
+					  double-- 8 bytes
+					  boolean-- true/false
+		
+		Reference DataTypes(Objects)---- String, java.util.Date, java.time.LocalDate
+		Package--- group of classes( folder)
+			--------------- com.allstates.training.javaproject.db
+			---------------org.allstates.
+			---------------java.
+			---------------javax
+			---------------com.sun
+			------------------com.oracle
+		
+class Person{
+	long adarNum;
+	String pname, address;
+	long ph_num;
+	void setPerson(){
+	adarNum= 123l;
+	pname="Shwetha";
+	address="Bangalore"
+	ph_num= 7829111l;
+	}
+	void display(){
+	System.out.print(adarNum);
+	}
+//void setAdarNum(){
+//}
+//void setPname(){
+//}
+}
+
+
+Object with new keyword--- data will stored in Heap memory
+variable values will store in stack memory
+
+Garbage Collection:
+
+young generation--- eden space, survivor 1, survior 2
+old generation
+perm generation
+
+
+Memory for Object: 
+
+	Person person=new Person();
+	
+	Constructor:
+	---------------
+	Use to allow the memory allocation
+	Special member/ method in any java class
+	which hava same name of the class
+	which never return any thing
+	default constructor
+	
+	
+class Employee{
+int empid;
+String ename;
+	Employee(){
+	}//default constructor
+	Employee(int empid,String ename){
+	}//parameterized constructor
+	
+}	
+a=b
+
+class Employee{
+int empid;///instance variables
+String ename;
+	Employee(int eid,String ename){//localvariables
+	empid=eid;
+	this.ename=ename;
+	}//parameterized constructor
+	void display(){
+	System.out.print(empid);
+	}
+	
+}	
+Employee e1=new Employee();
+e1.empid=134;
+e1.ename="SS";
+
+Employee e2=new Employee();
+e2.empid=135;
+e2.ename="CS";// direct properties access
+
+
+
+Employee e3=new Employee();//setter way
+e3.setEmployee(135,"ss");
+
+Employee e4=new Employee(136,"sa");//constructor way
+
+member access specfiers:
+----------------------------------
+public -- accessible for whole project
+if you are not menthioning anything it --- default--- with in the same package
+private---only for that class
+protected-- only for childs
+
+always class should contain private variables public methods
+any class contains only private variables and public constructor or public getters and setters that class 
+is called POJO class
+
+Object
+Class
+Constructor
+
+Inheritence--- single level, multilevel, multiple(doesnot)
+polymorphism
+Encapsulation
+abstraction
+
+
+parent class in java is Object
+class person{
+person(int s,String m){
+	this.s=s;
+	this.m=m;
+}
+
+}
+class Employee extends person{
+double p;
+Employee(double p,int s,String x){
+super(s, x);
+this.p=p;
+
+}
+}
+
+Inheritence
+Polymorphism
+	1. Static--- compile time polymorphism--method overloading--happen same class
+	2. Dynamic-- runtime polymorphism--method overridding---parent and child class
+	
+	
+	add(int a,int b)
+	add(float a,float b)
+	add(int a,int b,int c)
+	display(int a,String b)----display(12,"ss")
+	display(String b,int a)-------display("ss",12)
+	
+	class Parent{
+		public void display(){
+		}
+	}
+	class Child extends Parent{
+		public void display(){
+		}
+	}
+	class Object
+	
+	Class Father					class Mother
+	
+	getMoney()							getMoney1()
+	
+	class Son extends Father
+	
+	Son s1=new Son();
+	s1.getMoney();
+
+Keywords:
+		this
+		super
+		static----variables, method, block
+		final--- variables, class(cannot inheirt), method(cannot be overriden)
+		if, if else, switch case default, break, continue, while, do while, for, 
+		Student---id,name
+						 static school="abc";
+-------------------------------------------
+		SavingsAccount---- withdraw---min balance should be 1000
+											deposit--- can be only multiples of 100
+		CurrentAccount----withdraw--- min balance should be 10000
+--------------------------------------------
+Scanner sc=new Scanner(System.in);
+		int i=sc.nextInt();
+		System.out.println(i);
+		
+
+
+
+
+
+
+
+
+
+

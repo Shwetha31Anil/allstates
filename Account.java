@@ -1,32 +1,22 @@
-package com.allstates.training.oops;
+package com.allstates.training.assignment;
 
-public class Account {
-	private int accnum;
-	private String name;
-	protected double balance;
-	
-	public Account(int accnum,String name,double balance){
-		this.accnum=accnum;
-		this.name=name;
-		this.balance=balance;
+public interface Account {
+	public double withdraw(int amount);
+	public double deposit(int amount);
+	//public void getDd();
+	public default void getDisplay() {
+		System.out.println("Default method called");
 	}
-	
-	public double withdraw(int amount) {
-		if(balance> amount && balance >=(amount+1000)) {
-			balance=balance-amount;
-		}
-		else {
-			System.out.println("less balance");
-		}
-		return balance;
+	public static void getValue() {
+		System.out.println("Static method called");
 	}
-	
-	public double deposit(int amount) {
-		if((amount%100)==0)
-			balance=balance+amount;
-		else
-			System.out.println("amount cannot deposit");
-		return balance;
-	}
-
+//	public  double  balance=1000;
+//	public default double deposit(int amount) {
+//		if(amount > 0)
+//			//balance;
+//			System.out.println("balance");
+//			else
+//				System.out.println("Wrong input");
+//			return balance;
+//	}
 }

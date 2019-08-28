@@ -1,14 +1,41 @@
-package com.allstates.training.oops;
+package com.allstates.training.assignment;
 
-public class SavingsAccount extends Account {
-
-	public SavingsAccount(int accnum, String name, double balance) {
-		super(accnum, name, balance);
+public class SavingsAccount implements Account {
+	private long accnum;
+	private double balance;
+	
+	public SavingsAccount(long accnum,double balance) {
+		this.accnum=accnum;
+		this.balance=balance;
 	}
-
+	
 	public double getBalance() {
-		// TODO Auto-generated method stub
-		return super.balance;
+		return balance;
 	}
+	@Override
+	public double withdraw(int amount) {
+		if(amount > 0 && balance >=(amount+1000))
+			balance=balance-amount;
+		else if(amount==balance)
+			System.out.println("minimum balance should maintain");
+		else if(amount <= 0)
+			System.out.println("wrong input");
+		else
+			System.out.println("low balance");
+		return balance;
+	}
+
+	
+
+	@Override
+	public double deposit(int amount) {
+		if(amount > 0)
+		balance= balance+amount;
+		else
+			System.out.println("Wrong input");
+		return balance;
+	}
+
+	
 
 }
