@@ -1,0 +1,121 @@
+Recap:
+-----------
+Collection API: 
+	Iterable---Collection-- List--Vector, LinkedList, ArrayList
+									--Set--HashSet, LinkedHasSet, SortedSet--TreeSet
+									--Queue--PriorityQueue-- peek and poll
+										--Deque-- addFirst, addLast
+													ArrayDeque
+										--BlockingQueue
+					methods: add, addAll,clear, remove, removeAll, retainAll,
+									contains, isEmpty
+				Map<key,value>--- HashMap(not syncr)
+											--LinkedHashMap
+											--Hashtable(synchronized)
+											---SortedMap---TreeMap
+											
+											
+					Map<Integer,Person> m1=new HashMap<>();
+					m1.put(12,new Person());
+					m1.get(12);
+					
+					for(Person p:list)
+					Iterator--unidirection
+					ListIterator--bidirection
+					List<Person> list=new ArrayList<>();
+					java 8: forEach
+					list.forEach((p)->System.out.print(p));
+					
+					for(Candidate can:list){
+					if(ca.getCity().equals("banagalore") && ca.getTechnical().equals("java")){
+					}
+					}
+					
+					
+					list.getAll().stream().filter((n)->(n%2)==0).collect(Collectors.toList());
+					list.getAll().stream().map(e.getEname()).reduce()
+					list.getAll().stream().map(e.getExper()).max(Integer::comapre)
+					
+					select max(salary) from employee;
+					employeeList.getAll().stream().map(e.getSalary())
+					.max(Double::comapre).get();
+					
+					Comparator com=new Comprator(){
+					public int compare(Employee e1,Employee e2){
+						if(e1.getSalary()>e2.getSalary()) return -1;
+					}
+					}
+					(e1,e2)-> e1.getsalary().compareTo(e2.getSalary)
+					
+					Integer::compare
+					Double::compare
+-----------------------------------------------------------------------------------------
+OOPS
+Exception Handling
+Threading
+Collections
+Java 8 features---> Interface, FunctionInterface, lambda expression, methodrefrence, stream api
+								java.time.*;
+											LocalDate
+----------------------------------------------------------------------------------------
+JDBC-- Java Database Connectivity
+
+ set password for 'root'@'localhost' ='admin';
+
+select * from employee where deptno=123;
+
+insert into department values(123,'ss');
+
+update department set dname='as';
+
+dml --- executeUpdate();int
+ddl		---execute: boolean: true /fasle
+dql		--executeQuery():ResultSet
+
+
+
+Step 1:  load the driver/register the driver/register
+Step 2: establish the connection
+step 3: prepare a statement
+step 4: excute the sql statement and store the result
+step 5: close the connection
+
+1. Class.forName("com.mysql.jdbc.Driver");--ClassNotfoundException
+2. Connection con=DriverManager.getConnection(url,user,pass);
+				String url="jdbc:mysql://localhost:3306/allstates";
+				String user="root";
+				String password="admin";
+3. Statement st=con.createStatement();
+	List<Department> deps=new ArrayList<>();
+		st.execute("create table department(deptid number primary key,dname varchar(10))")
+4. ResultSet rs=st.exeuteQuery("select * from department");
+				while(rs.next()){
+				Department d1=new Department();
+					d1.setdeptid(rs.getInt("deptid"));
+					d1.setDname(rs.getString(2));
+					d1.setLocId(rs.getInt(3));
+					deps.add(d1);
+				}
+				//deptid--number
+				//dname--varchar
+				//locid--number
+5.   rs.close();
+	st.close();
+	con.close();			
+
+
+3.  String sql="select * from gmail where email=? and password=?";
+		PreparedStatement pst=con.prepareStatement(sql);
+		pst.setString(1,sc.next());
+		pst.setString(2,sc.next());
+		ResultSet rs=pst.executeQuery();
+		rs.next();
+		
+		String sql="update product set qty=? where pid=?";
+		PreparedStatement pst=con.prepareStatement(sql);
+		pst.setInt(1,sc.nextInt());
+		pst.setInt(2,sc.nextInt());
+int i=pst.executeUpdate();
+
+											
+	
