@@ -1,0 +1,158 @@
+Spring Framework:
+---------------------
+	Core Java
+	JDBC
+	J2EE--web app development
+	
+	Arrays.sort(arrayobject);
+	
+	Pattern: ---Design Pattern---- Creational, Structural , Behavioural, J2EE Pattern
+	Framework: set of lib
+		struts, ORM--Hibernate, IBatis,eclipselink,
+		Spring
+		
+	EJB: Enterprise Java Bean---Winter----Spring
+
+	Phone---OS, RAM, Camera, Processor
+	
+	class OS{
+	}
+	
+class RAM{
+}
+
+class Phone{
+	private OS os=new OS();
+	private RAM ram=new RAM();
+	private Camera cam=new Camera();
+	private Processor processor=new SnapDragon();
+
+}
+
+
+class Phone{
+	private OS os;
+	private RAM ram;
+	private Camera cam;
+	private Processor processor;
+
+}
+	
+	
+IOC--Inversion Of Control---- DI--Dependency Injection---- Spring, Angular
+													CI--Constructor Injection
+													SI	--Setter Injection
+Spring Modules: Spring Core
+							Spring DAO---- SpringJDBC, SpringORM(SpringHibernate)
+							Spring AOP---Aspect Oriented Programming
+							SpringTx
+							SpringMVC-- FrontController DesignPattern
+							SpringSecurity
+							
+							SpringBoot
+		
+Spring Core: Spring IOC: beans, context
+
+Spring Core:
+-------------------------		
+		DI--Dependency Injection
+		Spring 4.2.4
+		
+		Spring Container/IOC Container---- BeanFactory-----Lazy
+															-----ApplicationContext--- Eager	
+															ClassPathXMLApplicationContext("application.xml");
+															AnnotationConfigApplicationContext(AppConfig.class);
+		Spring---Configuration------XML Based--every java class is a bean
+											 -------Annotation Based---@Component
+											 ------Java Based
+				Employee-- eid, ename, salary							 
+	    application.xml:
+------------------------------
+			<?xml version="1.0" encoding="UTF-8"?>
+			To provide the rulesto XML:   DTD, XSD
+			<!DOCTYPE  roottag rules>
+			<beans xmlns="xsd">
+			</beans>
+			<beans xmlns="http://www.springframework.org/schema/beans
+										http://www.springframework.org/schema/context"
+					
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+		
+		<ctx:componectScan basepackage="com.allstate.training.beans"/>
+		//Department d1=new Department();
+		<bean id="d1" class="com.allstate.training.beans.Department">
+		<constructor-arg value="123"/>
+		<constructor-arg value="production"/>
+		</bean>
+		
+		<bean id="e1" class="com.allstate.training.beans.Employee">
+			<property name="empid" value="123"/>
+			<property name="ename" value="Shwetha"/>
+			<property name="department" ref="d1"/>
+			<constructor-arg  value=""/>
+		</bean>
+
+
+</beans>			
+			
+@Configuartion	
+@CompoenetScan(basepackage="com.allstate.training.beans")
+class AppConfig{
+
+	/*@Bean
+	public Employee getEmployee(){
+		return new Employee();
+	}*/
+
+}
+
+
+jar files should download-----build tool
+													Ant
+													Maven---XML---pom.xml
+													Gradle---JSON
+													
+													
+						STS--Spring tool suite
+
+
+Maven Project----- Central Repo---
+								Local Repo--- C://user/youruser/.m2
+								
+								
+							SpringExampleDemo---springExampleDemo	
+							
+							
+							
+@Configuration
+@ComponentScan
+@Component
+@Autowired
+@Scope--singleton, prototype, request,session, global-session
+@Qualifier
+@Primary
+@Bean--create the bean
+
+@Component----@Repository(Dao layer)--- @Service(BO layer)
+						--- @Contoller(request taking and response giving)
+
+Processor---- MediaTech, SnapDragon
+
+@Autowired
+private Processor processor;							
+
+BankApp: -----com.allstate.training.pojos
+					Account(Interface)--- SavingsAccount, CurrentAccount
+							---accNum, balance, branch, person
+					Person--adarNum, address, phnum,email
+					Address-- street,city, state, pincode
+
+Thread t1=new MyThread();
+t1.start();
+
+Runnable r1=new MyThread();
+
+
+List al=new ArrayList();

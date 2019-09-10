@@ -1,0 +1,15 @@
+Configuration:  ---- xml----hibernate.cfg.xml
+
+<hibernate-configuration>
+		<session-factory>
+				driver
+				url
+				user
+				pass
+				dialect:  MYSQLDailect/OracleDialect
+		</session-factory>
+</hibernate-configuration>
+----------------------------------Mapping--Object-----Realtions in DB
+
+
+

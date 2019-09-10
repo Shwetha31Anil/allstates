@@ -1,0 +1,125 @@
+J2SE
+JDBC:
+------------
+	Class.forName();
+	Connection con=DriverManager.getConnection(url,user,pass);
+	Statement st=con.createStatement();
+	PreparedStatement pst=con.prepareStatement();
+	CallableStatement cs=con.prepareCall();
+	
+	st.executeQuery: ResultSet-drl
+	st.execute: boolean-ddl
+	st.execute: int--dml
+	
+	ACID  with OLTP
+			con.setAutoCommit(false);
+			
+			con.commit();
+			
+			con.rollback();
+----------------------------------------------------------------------------------
+J2EE-- Java 2 Enterprise Edition
+
+	Develop web application
+	To run web code--- WebContainer--- Web Server-- development 
+	Application Server--- WebContainer and EJBcontainer-deployment
+	
+	ApplicationServers:
+			Apache Tomcat--Apache
+			JBOSS renamed as WildFly-- jboss
+			WebSphere-- IBM
+			Weblogic-- Oracle
+			GlassFish
+			OpenShift cloud- Redhat
+			
+			
+		Apache Tomcat--- 9	
+			
+		Components: Servlet, JSP(Java Server Pages)
+							,JSTL(Java Standard Tag Library),Filter, Listener,
+								JMS(Java Messaging Service), 
+								JavaMailApi, EJB(Enterprise Java Bean),
+								JNDI(Java Naming Directory Interface)	
+								
+			MVC --Model(Bean) View(JSP) Contoller(Servlet)	
+				
+				Tier Architeture: Single
+											Two Tier
+											Three Tier
+											Four Tier
+												m, v, c and dao
+											Five Tier
+												model, view, controller, dao, services(BO)
+--------------
+servlet--- javax
+			--- servlet-api.jar/servlet.jar
+			Servlet 3-- annotations
+						web.xml--deployment descriptor
+			Servlet--interface---- init, 
+					service(ServletRequest request,ServletResponse response)
+					destory
+		a	GenericServlet--- independent of Protocol
+		a	HttpServlet--- HTTP/ HTTPS protocol
+					service(HttpServletRequest request,HttpServletResponse response)
+							doGet--send the rquest url and limit only 2048 kb data
+							doPost-- send the request to form of the next page and unlimited date
+							doHead
+							doTrace--trace the error
+							doOptions
+							doPut
+							doDelete
+			
+			@WebServlet("/login")
+			class MyServlet extends HttpServlet{
+			
+			protected void doGet(HttpServletRequest request, HttpServletResponse response)throws ServletException,IOException{
+				response.setContentType("text/html");
+				String email=request.getParameter("email");
+					PrintWriter out=response.getWriter();
+				out.print("welcome"+email);
+				out.print("<input type='text'>'");
+				getParameter("email");----one value
+				getParameterValues("lan");--- check box--more than one value
+					getParameterNames()--- get the name of the html elements
+					getParamentMap();
+			}
+			}
+			
+			myServlet?email=""&pass=""
+			<form action="MyServlet" method="get">
+				<input type="email" name="email">
+				<input type="password" name="pass">
+				<input type="submit" value="Login">
+			</form>	
+			interfaces:
+			--------------
+			Servlet
+			HttpServetRequest
+			HttpServletResponse
+			ServletRequest
+			ServletResponse
+			
+			Abstract class:
+			---------------
+			GenericServlet
+			HttpServlet
+	
+	
+	
+	http://localhost:8089/FirstWebProject/Welcome
+	
+	404-- Resource not found
+	500--Internal server error
+	200-- everything is ok
+	405-- method not allowed
+	
+	
+	
+	RequestDispatcher--- with in the application	
+						include---carray the response of middle page
+						forward---will not carry
+	sendRedirect-- redirect to external application					
+	
+	
+	
+	

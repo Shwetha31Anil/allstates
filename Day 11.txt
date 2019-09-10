@@ -1,0 +1,118 @@
+J2EE--- Servlet
+
+Servlet api--- Servlet---- GenericServlet---HttpServlet
+
+init
+service
+destroy
+
+
+ServletRequest
+ServletResponse
+HttpServletResponse
+HttpServletRequest
+RequestDispatcher--- include, forward
+response.sendRedirect---externa and internal application
+
+
+-----scope of the attributes
+ServletRequest  --email----per request
+ServletConfig----- per servlet
+ServletContext-----whole application---for all servletsand jsps
+HttpSession----SessionManagement--- till you logout----login and logout
+
+
+request------ one thread-----    LoginServet
+request-----one thread------
+request---
+
+SessionManagement---
+----------------------
+Hidden Fields
+UrlRewritting---- login?email=""&pass=""
+Cookie---  Cookie(browser based)
+HttpSession---interface
+
+String s=request.getParameter(textbox name);
+
+		HttpSession session=request.getSession();--- it can create new session or it can use existing session
+											request.getSession(false);--- it will use created session
+	User u1=new User();
+	u.setUserName(request.getParameter("username"));
+	u.setPassword(request.getParameter("pwd"));
+	session.setAttribute(name,value);
+	session.setAttribute("sname",u);
+	
+	
+	Stirng s=(String)session.getAttribute("sname");
+	sname--- nidhi
+	sname-- rahul
+	Logout:
+	HttpSession session=request.getSession(false);
+	session.removeAttribute("sname");
+	sesssion.invalidate();
+	
+	
+	21 people logged in ---21 thread created--- sname but values different
+	
+	
+	web.xml
+	
+	<context-param>
+		<param-name>url</param-name>
+		<param-value>jdbc:mysql://localhost:3306/allstate</param-value>
+	</context-param>
+	
+	
+	ServlteContext context=getServletContext();
+	context.getInitParameter("url");
+-------------------------------------------------------------------------------------
+
+JSP---Java Server Pages--- use create dynamic web pages or front end
+
+Jsp:
+------
+tags:
+	<% %>---scriptlet--- servlet code/java code---service method
+	<%!  %>---declaration------ used declare the variables and methods
+								---servlet but not inside any method
+	<%= %>--- expression --- print() method---for displaying output
+	<%-- %>--- comments
+	
+	<%   String str=session.getAttribute("sname") %>
+	Implicit Object:
+	-----------------
+	out
+	request
+	response
+	session
+	config
+	application
+	page
+	pageContext
+	exception
+	
+	Directives:
+	-------------
+	<%@  %>---- page-- import    isElIgnored
+					 ----include---static pages
+					 ----taglib----jstl---- core
+											  -----formatting
+											  -----function
+											  -----sql
+											  -----xml
+	Actions:
+	--------------
+	<jsp:include    file=""  >
+	<jsp:forward
+	<jsp:useBean---- mapped to bean class
+	<jsp:setProperty---setters
+	<jsp:getProperty--getters
+	<jsp:plugin
+	<jsp:fallback
+	<jsp:param
+	
+JSEL---Expression Language
+				${email}
+	
+	
